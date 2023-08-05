@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu:wght@300;400;500;700&display=swap');
 
 :root {
   --primary-color: rgb(255, 92, 92);
@@ -11,7 +11,7 @@
   --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --primary-color: rgb(150, 65, 255);
   --primary-variant: #6c63ff;
   --secondary-color: #03dac5;
@@ -23,10 +23,15 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  font-family: Ubuntu, sans-serif;
+  background-color: var(--background);
+  color: var(--on-background);
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%2316aace' fill-opacity='0.37' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 section {
@@ -43,11 +48,10 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 100px;
   font-weight: normal;
 }
 
-/* Navigation */
 nav {
   z-index: 10;
   position: fixed;
@@ -222,7 +226,7 @@ p {
 .slider::before {
   background: #fff;
   bottom: 4px;
-  content: "";
+  content: '';
   height: 26px;
   left: 4px;
   position: absolute;
