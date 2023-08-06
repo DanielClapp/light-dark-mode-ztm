@@ -5,6 +5,7 @@ const image1 = document.querySelector('#image1');
 const image2 = document.querySelector('#image2');
 const image3 = document.querySelector('#image3');
 const textBox = document.querySelector('#text-box');
+const currentTheme = localStorage.getItem('theme');
 
 function imageMode(color) {
   image1.src = `img/undraw_proud_coder_${color}.svg`;
@@ -31,11 +32,22 @@ function switchTheme(e) {
   if (e.target.checked) {
     //document.documentElement returns the root element of the document
     document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
     darkMode();
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
     lightMode();
   }
 }
 
 toggleSwitch.addEventListener('change', switchTheme);
+
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+    darkMode();
+  }
+}
